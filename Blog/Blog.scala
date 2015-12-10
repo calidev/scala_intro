@@ -12,13 +12,13 @@ object Blog {
     var user = userList.head
     for(i <- 0 to 10){
      var _post: Post = new Post("Title" + i, "Body"+i)
-     _post.setAuthor(user)
+     _post.author = user
      user.addPost(_post)
     }
 
     println("Title \t\t Body")
     for(post <- user.posts){
-      println(post.title + "\t\t" + post.body + "\t\t" + user.name )
+      println(post.title + "\t\t" + post.body + "\t\t" + post.author.name )
     }
   }
 }
